@@ -1,113 +1,87 @@
-[data-theme="dark"] {
-    --main-color: #272b30;
-    --seconde-color: #32383e;
-    --color-text: #fff;
-    --btn-main-color: #272729;
+:root{
+ 
+   --w-color:  white;
  }
- .badge-color {
-    background-color: var(--seconde-color);
+ body {
+   font-family: "Comfortaa", cursive;
+   background-color: #272b30;
+   color: var(--w-color) ;
  }
- body{
-    font-family: "Comfortaa", cursive;
-    height: 100%;
-    width: 100%;
-    background-color:#272b30;
-     color: var(--color-text); 
- }
+ 
  h1,h2,h3,h4,h5,h6 {
    font-family: "Nerko One", cursive;
-   color: var(--color-text) !important;
-}
-a,p,span{
-    color: inherit !important;
-}
-ul{
-    list-style-position:inside;
-}
-.nav-item ,.nav-link.active{
-    color: #09c !important;
-    transition: color 0.5s;
-}
-.nav-item ,.nav-link:hover{
-    color: #09c !important;
-    transition: color 0.5s;
-}
-::-webkit-scrollbar {
-    width: 0.625rem;
+   color: var(--w-color) !important;
  }
  
- ::-webkit-scrollbar-track {
-    background-color: var(--seconde-color);
+ a,p,span {
+   color: var(--w-color) !important;}
+ 
+ header img {
+   max-height: 30vh;
+   object-fit: cover;
  }
  
- ::-webkit-scrollbar-thumb {
-    background-color: var(--main-color);
-    border-radius: 50px;
-    box-shadow: 0 0 5px rgb(0 0 0 / 0.5) inset;
+ .nav-item .nav-link.active,
+ .nav-item .nav-link:hover {
+   color: rgb(2, 152, 202) !important;
+   transition: color 0.5s;
  }
-
- .home.card{
-    filter: grayscale(0.7);
+ 
+ .game-cards .card {
+   filter: grayscale(0.7);
    transition: transform 0.5s, filter 0.5s 0.1s;
  }
  
- header img{
-    max-height: 30vh;
-    object-fit: cover;
+ .game-cards .card:hover {
+   transform: scale(1.05);
+   filter: grayscale(0);
  }
- .home .card:hover {
-    transform: scale(1.05);
-    filter: grayscale(0);
+ 
+ nav {
+   background-color: rgb(58, 73, 124) !important;
+   margin-inline: auto;
+   margin-top: -50px;
+   border-radius: 20px;
+   box-shadow: 0 0 10px rgb(0 0 0 / 0.6);
  }
- nav{
-    background-color: rgb(58, 73, 123)!important;
-    margin-inline: auto;
-    margin-top: -30px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgb(0 0 0 / 0.7);
+ 
+ .details {
+   background-color: #272729be;
  }
- .datails{
-    background-color:  #272729be;
-    backdrop-filter: blur(4px);
-    min-height: 100vh;
+ 
+ .loading {
+   position: fixed;
+   z-index: 999;
+   inset: 0;
+   background-color: #272729be;}
+ .loader {
+   width: 80px;
+   height: 80px;
+   border-radius: 50%;
+   display: inline-block;
+   border-top: 4px solid var(--w-color);
+   border-right: 4px solid transparent;
+   box-sizing: border-box;
+   animation: rotation 1s linear infinite;
  }
- .loading{
-    position: fixed;
-    z-index: 9999;
-    inset: 0;
-    background-color:  #272729be;
-    align-items: center;
-    display: flex;
+ .loader::after {
+   content: "";
+   box-sizing: border-box;
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 80px;
+   height: 80px;
+   border-radius: 50%;
+   border-left: 5px solid #fc3d03;
+   border-bottom: 5px solid transparent;
+   animation: rotation 0.5s linear infinite reverse;
  }
- .loader{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: inline-block;
-    border-top: 4px solid #fff ;
-    border-right:4px solid transparent ;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    position: relative;
+ @keyframes rotation {
+   0% {
+     transform: rotate(0deg);
+   }
+   100% {
+     transform: rotate(360deg);
+   }
  }
- .loader:hover{
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border-left: 4px solid #ff3d00;
-    border-bottom: 4px solid transparent;
-    animation: rotation 0.5s linear infinite reverse;
- }
- @keyframes rotation{
-    0% {
-        transform: rotate(0deg);
-     }
-     100% {
-        transform: rotate(360deg);
-     }
-    }
